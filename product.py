@@ -91,8 +91,8 @@ def getLastId(cur):
 
 if __name__ == '__main__':
     starttime = datetime.datetime.now()
-#     conn = pymysql.connect(host = '14.18.80.193', user ='root', password ='KsmwE6tK3s5c5nmC', database ='test', charset='utf8')
-    conn = pymysql.connect(host = 'localhost', user ='root', password ='123456', database ='test', charset='utf8')
+    conn = pymysql.connect(host = '134.175.142.57', user ='ok_overseas', password ='7TxLaTZT7rP2bs8a', database ='ok_overseas', charset='utf8')
+    # conn = pymysql.connect(host = 'localhost', user ='root', password ='123456', database ='test', charset='utf8')
     cur = conn.cursor()
 #     input_time=input("输入：输入1 或 2")
 #     importExcelToMysql(cur, "./ok_audio_list.xlsx",1)
