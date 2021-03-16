@@ -72,7 +72,7 @@ def importExcelToMysql(cur, path,test=0):
             a = str(sqlstr[6]).strip()
             cur.execute("select id from product_type where name = (%s) and category_id = 4",a)
             a_data  = cur.fetchone()
-            a_productstr = [product_id,l_data[0]]
+            a_productstr = [product_id,a_data[0]]
             a_res = cur.execute("insert into product_type_intermedial(product_id,product_type_id) values(%s,%s)",a_productstr)
             
             m = str(sqlstr[7]).strip()
@@ -91,8 +91,8 @@ def getLastId(cur):
 
 if __name__ == '__main__':
     starttime = datetime.datetime.now()
-    conn = pymysql.connect(host = '134.175.142.57', user ='ok_overseas', password ='7TxLaTZT7rP2bs8a', database ='ok_overseas', charset='utf8')
-    # conn = pymysql.connect(host = 'localhost', user ='root', password ='123456', database ='test', charset='utf8')
+#     conn = pymysql.connect(host = '134.175.142.57', user ='ok_overseas', password ='7TxLaTZT7rP2bs8a', database ='ok_overseas', charset='utf8')
+    conn = pymysql.connect(host = 'localhost', user ='root', password ='123456', database ='test', charset='utf8')
     cur = conn.cursor()
 #     input_time=input("输入：输入1 或 2")
 #     importExcelToMysql(cur, "./ok_audio_list.xlsx",1)
