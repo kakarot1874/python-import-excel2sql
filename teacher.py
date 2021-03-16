@@ -12,7 +12,7 @@ def importExcelToMysql(cur, path,test=0):
             time='{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
             #         status	avatar	number	nickname	good_at	location	sort	created_at     
     #             id	头像	善长(描述)	编号	地址	昵称	状态	排序
-            valuestr = [str(sqlstr[7]), str(sqlstr[1]), str(sqlstr[3]).strip(), str(sqlstr[5]), str(sqlstr[2]), str(sqlstr[4]), str(sqlstr[6]),time]
+            valuestr = [str(sqlstr[6]), str(sqlstr[1]), str(sqlstr[3]).strip(), str(sqlstr[5]), str(sqlstr[2]), str(sqlstr[4]), str(sqlstr[7]),time]
             cur.execute("insert into teacher(status,avatar,number,nickname,good_at,location,sort,created_at) values(%s,%s,%s,%s,%s,%s,%s,%s)", valuestr)
             teacher_id = getLastId(cur)
             #temp_table
@@ -41,7 +41,7 @@ def importExcelToMysql(cur, path,test=0):
             else:
                 time='{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
                 #         status	avatar	number	nickname	good_at	location	sort	created_at     
-                valuestr = [str(sqlstr[7]), str(sqlstr[1]), str(sqlstr[3]).strip(), str(sqlstr[5]), str(sqlstr[2]), str(sqlstr[4]), str(sqlstr[6]),time]
+                valuestr = [str(sqlstr[6]), str(sqlstr[1]), str(sqlstr[3]).strip(), str(sqlstr[5]), str(sqlstr[2]), str(sqlstr[4]), str(sqlstr[7]),time]
                 cur.execute("insert into teacher(status,avatar,number,nickname,good_at,location,sort,created_at) values(%s,%s,%s,%s,%s,%s,%s,%s)", valuestr)
                 teacher_id = getLastId(cur)
                 go_teacher_id = int(sqlstr[0])
