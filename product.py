@@ -45,7 +45,7 @@ def importExcelToMysql(cur, path,test=0):
 
             teacher_id = str(temp_data[1])
 #             print(ok_teacher_id+'------'+teacher_id)
-#                     id	sort	number	type	lang	sex	age	mood	status	audio_url	teacher_id   
+#                     id    sort    number  type    lang    sex age mood    status  audio_url   teacher_id   
             valuestr = [str(sqlstr[2]).strip(),str(sqlstr[1]), str(sqlstr[8]), str(sqlstr[9]),teacher_id,time]
             cur.execute("insert into product(number,sort,status,audio_url,teacher_id,created_at) values(%s,%s,%s,%s,%s,%s)", valuestr)
             product_id = getLastId(cur)
@@ -73,7 +73,7 @@ def importExcelToMysql(cur, path,test=0):
             cur.execute("select id from product_type where name = (%s) and category_id = 4",a)
             a_data  = cur.fetchone()
             a_productstr = [product_id,l_data[0]]
-            a_res = cur.execute("insert into product_type_intermedial(product_id,product_type_id) values(%s,%s)",l_productstr)
+            a_res = cur.execute("insert into product_type_intermedial(product_id,product_type_id) values(%s,%s)",a_productstr)
             
             m = str(sqlstr[7]).strip()
             cur.execute("select id from product_type where name = (%s) and category_id = 5",m)
